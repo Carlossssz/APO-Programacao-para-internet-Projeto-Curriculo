@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#curriculo {
+    width: 160mm;
+    min-height: calc(160mm * 1.414);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px 20px;
+    background-color: white;
+}
+
+@media print {
+    #btnImprimir {
+        display: none;
+    }
+
+    body,
+    html {
+        background: none !important;
+    }
+
+    #curriculo {
+        width: 210mm;
+        height: 297mm;
+        padding: 10mm;
+        margin-bottom: 0;
+    }
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .elementChildren, #formAcadBox{
+        break-inside: avoid;
+    }
+
+    .qrcode{
+        top: 90px;
+        right: 40px;
+    }
+}
+
+#btnImprimir {
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+/**
+    Page styles
+*/
+header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#headerBar {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(56, 56, 56);
+    margin-bottom: 10px;
+    
+}
+
+#headerBar #flag {
+    background-color: red;
+    width: 18px;
+    height: 20px;
+    position: relative;
+    left: 50px;
+}
+
+h1 {
+    width: 60%;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: rgb(56, 56, 56);
+    text-transform: uppercase;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 15px;
+    border-bottom: 1px solid gray;
+    font-weight: bold;
+}
+
+p {
+    font-size: 10pt;
+    text-align: justify;
+}
+
+main p {
+    padding: 0 10px 0 20px;
+
+}
+
+.empresaName {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:  20px;
+    font-size: 10pt;
+    padding: 0 10px 0 20px;
+}
+
+.elementChildren{
+    margin-bottom: 10px;
+}
+
+.box{
+    margin-bottom: 10px;
+}

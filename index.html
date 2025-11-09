@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Curriculos</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body class="bg-neutral-900 w-screen h-screen flex items-center justify-center flex-col">
+    <h1 class="text-5xl w-full text-center text-white text-shadow-sm text-shadow-orange-400 font-serif">Gerador de
+        Curriculos</h1>
+    <form id="container" action="api/curriculo.php" method="POST"
+        class="text-white flex bg-neutral-700 w-4/5 h-4/5 shadow-xl/20 max-w-2xl shadow-black items-center flex-col overflow-y-auto">
+        <!--Adicinar informações pessoais-->
+        <div id="InformacoesPessoais"
+            class="flex content-evenly items-center flex-row flex-wrap w-[90%] h-2xl text-shadow-lg">
+
+            <!--Titulo-->
+            <h2 class="text-center text-2xl basis-full text-shadow-lg">INFORMAÇÕES PESSOAIS</h2>
+
+            <!--Inputs-->
+            <div class="addInput ">
+                <input type="text" name="nome" id="nome" placeholder="Daniel Garcia" required>
+                <label for="nome">Nome Completo</label>
+            </div>
+            <div class="addInput ">
+                <input type="text" name="endereco" id="endereco" placeholder="Rua das Flores, 24" required>
+                <label for="endereco">Endereço</label>
+            </div>
+            <div class="addInput ">
+                <input type="text" name="cidade" id="cidade" placeholder="Rio de Janeiro" required>
+                <label for="cidade">Cidade</label>
+            </div>
+            <div class="addInput ">
+                <input type="text" name="estado" id="estado" placeholder="RJ" required>
+                <label for="estado">Estado</label>
+            </div>
+            <div class="addInput ">
+                <input type="text" name="cep" id="cep" placeholder="22253-000" required>
+                <label for="cep">Cep</label>
+            </div>
+            <div class="addInput ">
+                <input type="text" name="cell" id="cell" placeholder="(21)12345-6789" required>
+                <label for="cell">Celular</label>
+            </div>
+            <div class="addInput basis-full!">
+                <input type="text" name="email" id="email" placeholder="amen.fartan@gmail.com" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="addInput ">
+                <input type="text" name="Nacionalidade" id="nacionalidade" placeholder="brasileiro" required>
+                <label for="Nacionalidade">Nacionalidade</label>
+            </div>
+            <div class="addInput  responsividadeDate">
+                <input type="date" name="nascimento" id="nascimento" class="peer" required>
+                <label for="nascimento" id="nasLabel">Data de Nascimento</label>
+            </div>
+            
+        </div>
+
+        <!--Informações adicionais-->
+        <div id="informacoesAdicionais" class=" w-[90%] h-auto">
+            <!--Titulo-->
+            <h2 class="text-center text-2xl basis-full text-shadow-lg">INFORMAÇÕES ADICIONAIS</h2>
+
+            <!--Inputs de informações adicionains-->
+            <div class="addInput ">
+                <input type="text" name="portifolio" id="portifolio"
+                    placeholder="https://www.linkedin.com/in/joao-silva-82374b217/">
+                <label for="portifolio">Linkedin ou Portifólio</label>
+            </div>
+            <div class="addInput ">
+                <textarea class="textareaInput" name="objetivo" id="objetivo"
+                    placeholder="“Atuar como desenvolvedor web júnior, aplicando conhecimentos em front-end e back-end”"></textarea>
+                <label for="objetivo">Objetivo Profissional</label>
+            </div>
+
+        </div>
+
+
+
+        <!--BOTÕES PARA ADICIONAR INFORMAÇÕESEXTRASSSSSS-->
+        <div id="extras" class="flex gap-2 flex-wrap w-[90%] h-auto" style="margin-bottom: 20px">
+
+            <div id="experienciaBtn"
+                class="relative hover:shadow-lg shadow-neutral-800 active:shadow-none hover:bg-orange-400 hover:text-neutral-700 cursor-pointer border border-orange-400 text-orange-400 rounded-full flex items-center  w-55 h-10 transition-colors select-none duration-300">
+                <svg class="border rounded-full bg-neutral-700! absolute left-2" xmlns="http://www.w3.org/2000/svg"
+                    height="24px" viewBox="0 -960 960 960" width="24px" fill="darkOrange">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg>
+                <p class="font-semibold absolute left-9">Experência Profissional</p>
+            </div>
+
+
+            <div id="formacaoAcademicaBtn"
+                class="relative hover:shadow-lg shadow-neutral-800 active:shadow-none hover:bg-orange-400 hover:text-neutral-700 cursor-pointer border border-orange-400 text-orange-400 rounded-full flex items-center justify-evenly w-50 h-10 transition-colors select-none duration-300">
+                <svg class="border rounded-full bg-neutral-700! absolute left-2" xmlns="http://www.w3.org/2000/svg"
+                    height="24px" viewBox="0 -960 960 960" width="24px" fill="darkOrange">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg>
+                <p class="font-semibold absolute left-9">Formação acadêmica</p>
+            </div>
+
+
+            <div  id="cursosBtn"
+                class="relative hover:shadow-lg shadow-neutral-800 active:shadow-none hover:bg-orange-400 hover:text-neutral-700 cursor-pointer border border-orange-400 text-orange-400 rounded-full flex items-center justify-evenly w-52 h-10 transition-colors select-none duration-300">
+                <svg class="border rounded-full bg-neutral-700! absolute left-2" xmlns="http://www.w3.org/2000/svg"
+                    height="24px" viewBox="0 -960 960 960" width="24px" fill="darkOrange">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg>
+                <p class="font-semibold absolute left-9">Cursos / treinamentos</p>
+            </div>
+
+
+            <div id="hardSkillsBtn"
+                class="relative hover:shadow-lg shadow-neutral-800 active:shadow-none hover:bg-orange-400 hover:text-neutral-700 cursor-pointer border border-orange-400 text-orange-400 rounded-full flex items-center justify-evenly w-30 h-10 transition-colors select-none duration-300">
+                <svg class="border rounded-full bg-neutral-700! absolute left-2" xmlns="http://www.w3.org/2000/svg"
+                    height="24px" viewBox="0 -960 960 960" width="24px" fill="darkOrange">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg>
+                <p class="font-semibold absolute left-9">Hard Skils</p>
+            </div>
+
+
+            <div id="softSkillsBtn"
+                class="relative hover:shadow-lg shadow-neutral-800 active:shadow-none hover:bg-orange-400 hover:text-neutral-700 cursor-pointer border border-orange-400 text-orange-400 rounded-full flex items-center justify-evenly w-30 h-10 transition-colors select-none duration-300">
+                <svg class="border rounded-full bg-neutral-700! absolute left-2" xmlns="http://www.w3.org/2000/svg"
+                    height="24px" viewBox="0 -960 960 960" width="24px" fill="darkOrange">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg>
+                <p class="font-semibold absolute left-9">Soft Skils</p>
+            </div>
+        </div>
+
+        <!--Botão para finalizar o currículo-->
+        <div>
+            <input
+                class="active:scale-100 transition-all duration-300 hover:scale-110 hover:bg-orange-300 bg-orange-400 cursor-pointer text-neutral-700 font-bold rounded-full"
+                style="padding: 10px; margin-bottom: 10px;" type="submit" value="Finalizar Curriculo">
+        </div>
+    </form>
+
+    <script type="module" src="/src/js/script.js"></script>
+</body>
+
+</html>
