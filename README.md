@@ -1,0 +1,1 @@
+Trata-se de um gerador de currículo feito em Html, Css,  TailwindCss, Javascript, Vite e PHP. Trabalho da faculdade  - Análise e desenvolvimento de sistemas da matéria "Fundamentos de programação para internet"
